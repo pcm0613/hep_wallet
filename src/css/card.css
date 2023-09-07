@@ -1,0 +1,187 @@
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+.card-content {
+  width: 75%;
+}
+
+.input-content {
+  width: 75%;
+  text-align: left;
+}
+
+.form_check_div {
+  font-size:small;
+  text-align: left;
+}
+
+
+.btn_primary {
+  background-color: #ffa74e;
+  color: #ffffff;
+  border: none;
+}
+
+.btn_primary:hover {
+  background-color: #ff8101;
+  border-color : #ff8101;
+}
+
+.btn_primary:disabled {
+  background-color: #afa8a0;
+  border-color : #afa8a0;
+}
+
+.btn_primary:active,
+.btn_primary:focus
+ {
+  background-color: #ff8101 !important;
+  border-color : #ff8101 !important;
+}
+
+
+.btn_primary_outline {
+  background-color: #ffffff;
+  color: #ffa74e;
+  border-color: #ffa74e;
+}
+
+.btn_primary_outline:hover {
+  background-color: #ff8101 ;
+  border-color : #ff8101 ;
+}
+
+.btn_primary_outline:disabled {
+  background-color: #ffffff;
+  color: #afa8a0;
+  border-color : #afa8a0;
+}
+
+.btn_primary_outline:active,
+.btn_primary_outline:focus
+ {
+  background-color: #ff8101 !important;
+  border-color : #ff8101 !important;
+}
+
+.my-input input[type="checkbox"]:checked {
+
+  background-color: #ff8101;
+  border-color: #ff8101;
+  box-shadow: 0 0 0 2px #ffd8b0;
+}
+
+.my-input input[type="checkbox"]:focus:not(:checked),
+.my-input input[type="password"]:focus {
+  border-color: #ffd8b0;
+  box-shadow: 0 0 0 2px #ffd8b0; /* Example box shadow when unchecked after press */
+}
+
+
+
+
+.li_div {
+  list-style-type: disc;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  text-align: left;
+  font-size:small;
+}
+
+
+.circle-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  border-radius: 10%; /* 원 형태로 만들기 */
+  background-color: #f1f1f1; /* 배경색 설정 */
+  position: relative; /* 포지션 설정 추가 */
+
+  /* 아래 속성은 텍스트가 원 안에서 중앙에 위치하도록 스타일 조정 */
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.circle-text-item
+ {
+  font-size: small;
+  width: 70px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray; /* 테두리 스타일 */
+  border-radius: 40%; /* 동그란 테두리로 만들기 */
+  
+  margin-inline: 20px;
+  margin-block: 15px;
+  background-color: white; /* 아이템 배경색 */
+  position: relative; /* 포지션 설정 추가 */
+}
+
+.circle-text-item:active,
+.circle-text-item:focus {
+  border: 1px solid #ff8101; /* 테두리 스타일 */
+  box-shadow: 0 0 0 2px #ffd8b0;
+}
+
+.circle-text-confirm-item
+ {
+  font-size: small;
+  width: 70px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ff8101; /* 테두리 스타일 */
+  box-shadow: 0 0 0 2px #ffd8b0;
+  border-radius: 40%; /* 동그란 테두리로 만들기 */
+  
+  margin-inline: 20px;
+  margin-block: 15px;
+  background-color: white; /* 아이템 배경색 */
+  position: relative; /* 포지션 설정 추가 */
+}
+
+.circle-text-input {
+  text-align: center;
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: transparent; /* Optional: Transparent background */
+}
+
+
+
+.circle-text-index {
+  position: absolute;
+  top: 50%;
+  left: -20px; /* 위치 조정을 위해 값 조절 */
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: black;
+}
+
+.circle-text-item.blurred {
+  filter: blur(5px); /* 블러 처리 */
+}
+
+
+.warning-text {
+  position: absolute;
+  top: 50%; /* 높이의 중앙에 배치 */
+  left: 50%; /* 가로의 중앙에 배치 */
+  transform: translate(-50%, -50%); /* 중앙 정렬을 위한 변환 */
+  color: black;
+  font-size: small;
+  text-align: center;
+  z-index: 2; /* 텍스트를 단어들 위에 표시 */
+}

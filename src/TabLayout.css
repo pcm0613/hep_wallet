@@ -1,0 +1,36 @@
+.tab-layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    
+  }
+  
+  .tab-menu {
+    width: 100%;
+    display: flex;
+    
+  }
+  
+  .tab-item {
+    width: 100%;
+    cursor: pointer;
+    
+  }
+  
+  .tab-item.active {
+    height: 26px;
+    border-bottom: 2px solid #FF7F00;
+    
+  }
+  
+  .tab-content-item {
+    display: none;
+    background-color:snow;
+    
+  }
+  
+  .tab-content-item.active {
+    display: block;
+    
+  }
