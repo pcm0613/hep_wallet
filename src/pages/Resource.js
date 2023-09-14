@@ -15,7 +15,7 @@ import SellRamTab from '../components/SellRamTab';
 
 import PercentageCircle from '../components/PercentageCircle';
 
-const Resource = ({accountInfo,hep_integer,ram_amount}) => {
+const Resource = ({accountInfo,hep_integer,ram_amount,accountName,privateKey}) => {
 
   var CPU_staking_amount=0.0000;
   var NET_staking_amount=0.0000;
@@ -64,8 +64,8 @@ const Resource = ({accountInfo,hep_integer,ram_amount}) => {
                 key={index}
                 className={`tab-content-item ${BuyOrSell === index ? 'active' : ''}`}
               >
-                {index === 0 && <BuyRamTab setRAM_buy={setRAM_buy} />}
-                {index === 1 && <SellRamTab setRAM_sell={setRAM_sell} accountInfo={accountInfo}/>}
+                {index === 0 && <BuyRamTab setRAM_buy={setRAM_buy} accountName={accountName} privateKey={privateKey}/>}
+                {index === 1 && <SellRamTab setRAM_sell={setRAM_sell} accountInfo={accountInfo} accountName={accountName} privateKey={privateKey}/>}
 
                 
               </div>
@@ -131,8 +131,8 @@ const Resource = ({accountInfo,hep_integer,ram_amount}) => {
                 key={index}
                 className={`tab-content-item ${StakingOrUns === index ? 'active' : ''}`}
               >
-                {index === 0 && <StakingTab setCPU_staking={setCPU_staking} setNET_staking={setNET_staking} hep_integer={hep_integer} account_name={accountInfo.account.account_name}/>}
-                {index === 1 && <UnStakingTab setCPU_unstaking={setCPU_unstaking} setNET_unstaking={setNET_unstaking}/>}
+                {index === 0 && <StakingTab setCPU_staking={setCPU_staking} setNET_staking={setNET_staking} hep_integer={hep_integer} accountName={accountName} privateKey={privateKey}/>}
+                {index === 1 && <UnStakingTab setCPU_unstaking={setCPU_unstaking} setNET_unstaking={setNET_unstaking} accountName={accountName} privateKey={privateKey}/>}
 
                 
               </div>
@@ -155,13 +155,13 @@ const Resource = ({accountInfo,hep_integer,ram_amount}) => {
     <div className='resourceDiv'>
       <div className='resourceHeader'>
         <div className='hep_cancel'>
-        <font>{accountInfo.account.core_liquid_balance}</font>
+        <font className='hep_balance'>{accountInfo.account.core_liquid_balance}</font>
         <p className='cancel' onClick={() => popToTop()}>취소</p>
         </div>
       <div className='nowResourcesDiv'>
-      <PercentageCircle percent={75} text={'CPU 사용량'} /> 
-      <PercentageCircle percent={75} text={'NET 사용량'} /> 
-      <PercentageCircle percent={75} text={'RAM 사용량'} /> 
+      <PercentageCircle percent={((accountInfo.account.cpu_limit.used/Number(accountInfo.account.cpu_limit.available))*100).toFixed(1)} text={'CPU 사용량'} /> 
+      <PercentageCircle percent={((accountInfo.account.net_limit.used/Number(accountInfo.account.net_limit.available))*100).toFixed(1)} text={'NET 사용량'} /> 
+      <PercentageCircle percent={((accountInfo.account.ram_usage/Number(accountInfo.account.ram_quota))*100).toFixed(1)} text={'RAM 사용량'} /> 
       </div>
       </div>
         <div className="tab-layout">

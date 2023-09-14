@@ -24,7 +24,7 @@ function App() {
   const [componentsToRender, setComponentsToRender] = useState([]);
 
   // // 로컬 저장소로부터 상태를 받아온다.
-  // useEffect(() => {
+   useEffect(() => {
     
   //   chrome.storage.local.get(['request_state'], (result) => {
   //     const storedData = result.request_state; 
@@ -54,13 +54,14 @@ function App() {
   //       setComponentsToRender(updateData);
   //     }
 
-  //     // let updateData = [];
-  //     // updateData.push(<BrowserRouter><Main/></BrowserRouter>);
-  //     // setComponentsToRender(updateData);
+        let updateData = [];
+        updateData.push(<BrowserRouter><Main/></BrowserRouter>);
+        setComponentsToRender(updateData);
+     
       
   //   });
 
-  // }, []);
+   }, []);
 
   
   

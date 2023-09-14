@@ -6,7 +6,7 @@ import {
   popToTop,
 } from 'react-chrome-extension-router';
 
-const Vote = () => {
+const Vote = ({accountName,privateKey}) => {
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -38,8 +38,8 @@ const Vote = () => {
 
     const data = {
       datas: {
-        voterPrivateKey: '5JwpGuCc1y63xDe6TPxZzf9NJLqGj5eYNTwttVifcqTPxmbyR1Z',
-        voterName: 'producer1', // 실제 데이터 값
+        voterPrivateKey: privateKey,
+        voterName: accountName, // 실제 데이터 값
         producerName: selectProducer,
       }
     };
@@ -189,8 +189,11 @@ const Vote = () => {
             <div className='selected_container_all'>
             
             <div className='resourceHeader'>
-        <font className='actionTitle'>Selected ({selectProducer.length}/30)</font>
-        <p className='cancel' onClick={() => popToTop()}>취소</p>
+              <div className=' selectedAndCancel'>
+              <font className='vote-actionTitle'>Selected ({selectProducer.length}/30)</font>
+        <p className='vote-cancel' onClick={() => popToTop()}>취소</p>
+              </div>
+        
       </div>
             
               <div className='selected_container'>

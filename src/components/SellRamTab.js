@@ -4,7 +4,7 @@ import {
     popToTop,
   } from 'react-chrome-extension-router';
 
-const SellRamTab=({setRAM_sell,accountInfo})=>{
+const SellRamTab=({setRAM_sell,accountInfo,accountName,privateKey})=>{
 
     const [RAM_amount, setRAM_amount] = useState();
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -41,8 +41,8 @@ const SellRamTab=({setRAM_sell,accountInfo})=>{
         
         const data = {
           datas: {
-            privateKey: '5JwpGuCc1y63xDe6TPxZzf9NJLqGj5eYNTwttVifcqTPxmbyR1Z',
-            accountName: 'producer1', // 실제 데이터 값
+            privateKey: privateKey,
+            accountName: accountName, // 실제 데이터 값
             bytes: RAM_amount
           }
         };

@@ -5,7 +5,7 @@ import {
   } from 'react-chrome-extension-router';
 
 
-const StakingTab = ({setCPU_staking, setNET_staking, hep_integer, account_name}) => {
+const StakingTab = ({setCPU_staking, setNET_staking, hep_integer,accountName,privateKey}) => {
 
     const [CPU_amount, setCPU_amount] = useState();
     const [NET_amount, setNET_amount] = useState();
@@ -46,8 +46,8 @@ const StakingTab = ({setCPU_staking, setNET_staking, hep_integer, account_name})
         
         const data = {
           datas: {
-            privateKey: '5JwpGuCc1y63xDe6TPxZzf9NJLqGj5eYNTwttVifcqTPxmbyR1Z',
-            accountName: 'producer1', // 실제 데이터 값
+            privateKey: privateKey,
+            accountName: accountName, // 실제 데이터 값
             cpuQuantity: CPU_amount,
             netQuantity: NET_amount
           }
@@ -70,7 +70,7 @@ const StakingTab = ({setCPU_staking, setNET_staking, hep_integer, account_name})
             setHeader("스테이킹 완료");
           }else
           {
-            setResult("언스테이킹 실패하였습니다.");
+            setResult("스테이킹 실패하였습니다.");
             setHeader("트랜잭션 실패");
           }
           openModal();

@@ -6,7 +6,7 @@ import {
 
 
 
-const BuyRamTab=({setRAM_buy})=>{
+const BuyRamTab=({setRAM_buy,accountName,privateKey})=>{
 
     const [RAM_amount, setRAM_amount] = useState();
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -34,8 +34,8 @@ const BuyRamTab=({setRAM_buy})=>{
         
         const data = {
           datas: {
-            privateKey: '5JwpGuCc1y63xDe6TPxZzf9NJLqGj5eYNTwttVifcqTPxmbyR1Z',
-            accountName: 'producer1', // 실제 데이터 값
+            privateKey: privateKey,
+            accountName: accountName, // 실제 데이터 값
             quantity: RAM_amount
           }
         };

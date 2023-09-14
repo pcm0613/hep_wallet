@@ -3,18 +3,13 @@ import App from '../Main';
 import Send from './Send'
 import '../App.css';
 import {
-  goBack,
-  goTo,
   popToTop,
   Link,
-  Router,
-  getCurrent,
-  getComponentStack,
 } from 'react-chrome-extension-router';
 
 
 
-const SearchAccount = ({accountInfo}) => {
+const SearchAccount = ({accountInfo,accountName,privateKey}) => {
 
   
   const [AccountName,setinpuData] = useState('');
@@ -44,7 +39,7 @@ const SearchAccount = ({accountInfo}) => {
           최근송금한 계정
         </div>
         <div className='bottomDiv'>
-          <Link className="link" component={Send} props={{AccountName,accountInfo}}>
+          <Link className="link" component={Send} props={{AccountName,accountInfo,accountName,privateKey}}>
           <button className='confirm_button'>
             확인
           </button>

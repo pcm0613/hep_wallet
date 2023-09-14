@@ -4,7 +4,7 @@ import {
   popToTop,
 } from 'react-chrome-extension-router';
 
-const UnStakingTab = ({setCPU_unstaking,setNET_unstaking}) =>
+const UnStakingTab = ({setCPU_unstaking,setNET_unstaking,accountName,privateKey}) =>
   {
     const [CPU_amount, setCPU_amount] = useState();
     const [NET_amount, setNET_amount] = useState();
@@ -29,8 +29,8 @@ const UnStakingTab = ({setCPU_unstaking,setNET_unstaking}) =>
       // nodejs서버에서 datas안에 accountName으로 받음
       const data = {
         datas: {
-          privateKey: '5JwpGuCc1y63xDe6TPxZzf9NJLqGj5eYNTwttVifcqTPxmbyR1Z',
-          accountName: 'producer1', // 실제 데이터 값
+          privateKey: privateKey,
+          accountName: accountName, // 실제 데이터 값
           cpuQuantity: CPU_amount,
           netQuantity: NET_amount
         }

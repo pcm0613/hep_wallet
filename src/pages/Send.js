@@ -9,7 +9,7 @@ import {
 import SearchAccount from './SearchAccount';
 import App from '../Main'
 
-const Send = ({AccountName,accountInfo}) => {
+const Send = ({AccountName,accountInfo,accountName,privateKey}) => {
   const [memo,setMemo] = useState('');
   const [send_amount,setSend_amount] = useState();
   const [result,setResult]=useState();
@@ -32,7 +32,7 @@ const Send = ({AccountName,accountInfo}) => {
       // nodejs서버에서 datas안에 accountName으로 받음
       const data = {
         datas: {
-          senderPrivateKey: '5JwpGuCc1y63xDe6TPxZzf9NJLqGj5eYNTwttVifcqTPxmbyR1Z',
+          senderPrivateKey: privateKey,
           senderName: accountInfo.account.account_name, // 실제 데이터 값
           receiverName: AccountName,
           quantity: send_amount+".0000",
